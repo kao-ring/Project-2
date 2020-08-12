@@ -2,3 +2,17 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+
+/* SUBMIT HTML */
+.form-group,
+.form-row {
+  padding: 3px;
+}
+
+h1 {
+  padding-bottom: 4%;
+}
+
+.col {
+  padding-bottom: 4%;
+}
