@@ -24,8 +24,11 @@ fs
     db[model.name] = model;
   });
 
+// go through the keys in the db object (the models)
 Object.keys(db).forEach(function(modelName) {
+  // does the model have an associate function?
   if (db[modelName].associate) {
+    // yes? run it to set up the associations
     db[modelName].associate(db);
   }
 });
