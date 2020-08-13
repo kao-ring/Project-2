@@ -5,10 +5,7 @@ module.exports = function (app) {
   //to access the latest post in fun stuff category
   //access the post by its id, get the last id
   app.get("/api/posts", function (req, res) {
-    db.Post.findOne({
-      //get the largest id
-      attributes: [[sequelize.fn("max", sequelize.col("id")), "maxid"]],
-    }).then(function (dbPost) {
+    db.Post.findAll({}).then(function (dbPost) {
       res.json(dbPost);
     });
   });

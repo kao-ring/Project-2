@@ -6,3 +6,6 @@ $(document).ready(function () {
   });
 });
 //to diplay the latest fun stuff post to the member page
+$.get("/api/members").then(function(data){
+  
+})
