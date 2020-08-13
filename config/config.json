@@ -1,21 +1,29 @@
 {
   "development": {
     "username": "root",
-    "password": "trilogy!",
+    "password": "1@Rootuser",
     "database": "village_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
+<<<<<<< HEAD
     "password": "mysqlpsw",
+=======
+    "password": null,
+>>>>>>> ecdf455ae474c23ba7ad1c5ee10c4e7068432390
     "database": "village_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
+<<<<<<< HEAD
     "password": "mysqlpsw*",
+=======
+    "password": null,
+>>>>>>> ecdf455ae474c23ba7ad1c5ee10c4e7068432390
     "database": "",
     "host": "127.0.0.1",
     "dialect": "mysql"

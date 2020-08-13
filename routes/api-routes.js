@@ -2,8 +2,6 @@
 var db = require("../models");
 var passport = require("../config/passport");
 
-
-
 module.exports = function (app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
@@ -16,15 +14,13 @@ module.exports = function (app) {
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
 
-
-
   app.post("/api/signup", function (req, res) {
     db.User.create({
       username: req.body.username,
       email: req.body.email,
-  
+
       password: req.body.password,
-      zipcode: req.body.zipcode
+      zipcode: req.body.zipcode,
     })
       .then(function () {
         res.redirect(307, "/api/login");
@@ -55,7 +51,7 @@ module.exports = function (app) {
     }
   });
   app.get("/api/zip", function (req, res) {
-    db.Zipcode.findAll({}).then(function(dbZipcode) {
+    db.Zipcode.findAll({}).then(function (dbZipcode) {
       res.json(dbZipcode);
     });
   });
