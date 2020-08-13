@@ -1,7 +1,10 @@
 /* SUBMIT HTML */
+header {
+    font-family: 'Roboto', sans-serif;
+}
+
 body {
     margin-bottom: 5%;
-    font-family: gordita, Helvetica Neue, Helvetica, sans-serif;
 }
 
 .form-group,
@@ -9,11 +12,15 @@ body {
     padding: 3px;
 }
 
+h1 {
+    margin-top: 10rem;
+
+}
+
 h1,
 h3 {
     text-align: center;
-    padding-bottom: 3%;
-    padding-top: 5%;
+    font-family: 'Roboto', sans-serif;
 }
 
 .col {
@@ -25,6 +32,7 @@ h3 {
 .modal-content {
     padding: 5%;
     border: 5px solid rgba(0, 0, 0, .2);
+    font-family: 'Roboto', sans-serif;
 }
 
 .row {
@@ -44,6 +52,13 @@ label {
 .modal-header {
     margin-bottom: -5%;
 }
+
+.btn-primary {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+.btn-primary1 {}
 
 #name {
     width: 107%;
