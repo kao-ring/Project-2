@@ -4,12 +4,6 @@ var bcrypt = require("bcryptjs");
 module.exports = function (sequelize, DataTypes) {
   var User = sequelize.define("User", {
     // The email cannot be null, and must be a proper email before creation
-<<<<<<< HEAD
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
-=======
 
     //ADD USERNAME COLUMN
     username: {
@@ -28,7 +22,6 @@ module.exports = function (sequelize, DataTypes) {
         isNumeric: true,
         len: [5],
       },
->>>>>>> b30ebbe5556d7abceb43edaace242a8efcda4688
     },
     email: {
       type: DataTypes.STRING,
