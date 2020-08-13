@@ -4,15 +4,54 @@ form.login {
 }
 
 /* SUBMIT HTML */
+body {
+  margin-bottom: 5%;
+}
+
 .form-group,
 .form-row {
   padding: 3px;
 }
 
 h1 {
-  padding-bottom: 4%;
+  margin-top: 5%;
+}
+
+h1,
+h3 {
+  text-align: center;
+  padding-bottom: 3%;
 }
 
 .col {
+  padding-top: 4%;
   padding-bottom: 4%;
+  margin-left: inherit;
+}
+
+.modal-content {
+  padding: 5%;
+  border: 5px solid rgba(0, 0, 0, .2);
+}
+
+.row {
+  display: block;
+}
+
+label {
+  margin-top: 2%;
+  display: block;
+}
+
+.form-group,
+.form-row {
+  padding: 0;
+}
+
+.modal-header {
+  margin-bottom: -5%;
+}
+
+#name {
+  width: 107%;
 }
