@@ -3,7 +3,9 @@
     url(https://media.nationalgeographic.org/assets/photos/000/249/24969.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed; */
-  color: 888f6b;
+  height: 100vh;
+  padding-top: 10%;
+  padding-bottom: 10%;
 }
 
 #memberhome {
@@ -13,4 +15,10 @@
 .carousel-item {
   width: 100%;
   height: 50%;
+}
+.card-header {
+  font-size: 20px;
+}
+h5 {
+  font-size: 15px;
 }

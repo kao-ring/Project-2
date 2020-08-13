@@ -35,39 +35,46 @@
             </div>
         </nav>
     </header>
-    <!-- Jumbotron -->
     <div class="jumbotron" id="memberhome">
         <h1 class="display-3">Welcome, User 123!</h1>
         <!-- <p class="lead">Connect With Your Village</p> -->
         <h3>Scroll to explore your community.</h3>
         <!-- <a class="btn btn-primary btn-lg" href="login.html" role="button">Log In</a>
         <a class="btn btn-primary btn-lg" href="signup.html" role="button">Join The Village</a> -->
+        <!-- add handlebars so the card text is dynamically created-->
     <div class="card text-center">
       <div class="card-header">
-        The Good Stuff
+        The Fun Stuff
       </div>
-      <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+      <div class="card-body" id="funstuff">
+        <h5 class="card-title">Current Report</h5>
+        <p class="card-toptext">current fun stuff posted here</p>
+        <a href="#" class="btn btn-primary">Read More</a>
       </div>
-      <div class="card-footer text-muted">
-        2 days ago
-      </div>
+     
     </div>
     <hr>
     <div class="card text-center">
       <div class="card-header">
         The Serious Stuff
       </div>
-      <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+      <div class="card-body" id="seriousstuff">
+        <h5 class="card-title">Current Report</h5>
+        <p class="card-toptext">current serious stuff posted here</p>
+        <a href="#" class="btn btn-primary">Read More</a>
       </div>
-      <div class="card-footer text-muted">
-        2 days ago
-      </div>
+      
+      <hr>
+      <div class="card text-center">
+        <div class="card-header">
+          Your Posts
+        </div>
+        <div class="card-body" id="memberhistory">
+          <h5 class="card-title">Hisotry of Submissions</h5>
+          <p class="card-historytext">current submission posts here</p>
+          <a href="#" class="btn btn-primary">See More</a>
+        </div>
+       
     </div>
   </div>
   </div>
