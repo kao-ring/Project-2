@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "trilogy!",
-    "database": "passport_demo",
+    "password": "1@Rootuser",
+    "database": "village_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
