@@ -5,7 +5,7 @@
 //GET THE ACTIVITY LOCATION through user zip code
 
 module.exports = function (sequelize, DataTypes) {
-  var Posts = sequelize.define("Posts", {
+  var Post = sequelize.define("Post", {
     //ADD OUR TITLE COLUMN and DEFINE it
     title: {
       type: DataTypes.STRING,
@@ -33,10 +33,10 @@ module.exports = function (sequelize, DataTypes) {
       },
     },
   });
-  Posts.associate = function (models) {
-    Posts.hasOne(models.User);
-    Posts.hasOne(models.Board);
+  Post.associate = function (models) {
+    // Post.hasOne(models.User);
+    // Post.hasOne(models.Board);
   };
 
-  return Posts;
+  return Post;
 };

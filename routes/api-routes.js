@@ -13,10 +13,16 @@ module.exports = function (app) {
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
+
+
+
   app.post("/api/signup", function (req, res) {
     db.User.create({
+      username: req.body.username,
       email: req.body.email,
+  
       password: req.body.password,
+      zipcode: req.body.zipcode
     })
       .then(function () {
         res.redirect(307, "/api/login");
@@ -51,3 +57,8 @@ module.exports = function (app) {
 //FOR ZIPCODE
 //if user zip input exists, then access in our database with the zipcode ID
 //if the user
+app.get("/api/zip", function (req, res) {
+  db.Zipcode.findAll({}).then(function(dbZipcode) {
+    res.json(dbZipcode);
+  });
+});
