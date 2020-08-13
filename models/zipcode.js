@@ -4,10 +4,10 @@ module.exports = function (sequelize, DataTypes) {
     zipcode: {
       type: DataTypes.INTEGER,
       validate: {
-        notNull: true,
         isNumeric: true,
         len: [5],
       },
+      allowNull: false
     },
   });
   Zipcode.associate = function (models) {
