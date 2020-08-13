@@ -2,6 +2,8 @@
 var db = require("../models");
 var passport = require("../config/passport");
 
+
+
 module.exports = function (app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
@@ -52,13 +54,13 @@ module.exports = function (app) {
       });
     }
   });
+  app.get("/api/zip", function (req, res) {
+    db.Zipcode.findAll({}).then(function(dbZipcode) {
+      res.json(dbZipcode);
+    });
+  });
 };
 
 //FOR ZIPCODE
 //if user zip input exists, then access in our database with the zipcode ID
 //if the user
-app.get("/api/zip", function (req, res) {
-  db.Zipcode.findAll({}).then(function(dbZipcode) {
-    res.json(dbZipcode);
-  });
-});
