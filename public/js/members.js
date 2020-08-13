@@ -5,3 +5,4 @@ $(document).ready(function () {
     $(".member-name").text(data.email);
   });
 });
+//to diplay the latest fun stuff post to the member page
