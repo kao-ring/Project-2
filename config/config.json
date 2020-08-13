@@ -1,21 +1,21 @@
 {
   "development": {
     "username": "root",
-    "password": "trilogy!",
+    "password": "1@Rootuser",
     "database": "village_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "KryDevJusNa1200*",
+    "password": null,
     "database": "village_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
-    "password": "KryDevJusNa1200*",
+    "password": null,
     "database": "",
     "host": "127.0.0.1",
     "dialect": "mysql"
