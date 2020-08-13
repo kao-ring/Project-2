@@ -42,12 +42,20 @@
     <div class="card text-center">
       <div class="card-header">
         The Fun Stuff
+            <select id="funpostlist" size="1">
+              <option value="" selected="selected">---Read More Fun stuff---</option>
+            </select>
+        <a href="submit.html">Submit Something Fun</a>
       </div>
       <div class="card-body" id="funstuff">
-        <h5 class="card-title">Current Report</h5>
-        <p class="card-toptext">current fun stuff posted here</p>
-        <a href="#" class="btn btn-primary">Read More</a>
-        <a href="#" class="btn btn-primary">Submit Something Fun</a>
+        <div id="latest">
+          <h5 class="card-title">Latest fun post</h5>
+          <div id="fun-title">Title</div>
+          <div id="fun-description">Description</div>
+        </div>
+        <div id="clicked-post">
+           <h5 class="card-title">More Fun</h5>
+        </div>
       </div>
      
     </div>
@@ -55,12 +63,18 @@
     <div class="card text-center">
       <div class="card-header">
         The Serious Stuff
+              <select id="seriouspostlist" size="1">
+                <option value="" selected="selected">---Read More Serious stuff---</option>
+              </select>
+            <a href="submit.html">Submit Something Serious</a>
       </div>
       <div class="card-body" id="seriousstuff">
-        <h5 class="card-title">Current Report</h5>
-        <p class="card-toptext">current serious stuff posted here</p>
-        <a href="#" class="btn btn-primary">Read More</a>
-        <a href="#" class="btn btn-primary">Submit Something Serious</a>
+        <h5 class="card-toptext">Latest serious post</h5>
+        <div id="serious-title">Title</div>
+        <div id="serious-description">Description</div>
+          <div id="clicked-post">
+            <h5 class="card-title">More Serious</h5>
+          </div>
       </div>
       </div>
   
