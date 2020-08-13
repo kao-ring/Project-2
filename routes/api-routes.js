@@ -15,6 +15,7 @@ module.exports = function (app) {
   // otherwise send back an error
   app.post("/api/signup", function (req, res) {
     db.User.create({
+      username: req.body.username
       email: req.body.email,
       password: req.body.password,
     })
@@ -47,3 +48,7 @@ module.exports = function (app) {
     }
   });
 };
+
+//FOR ZIPCODE
+//if user zip input exists, then access in our database with the zipcode ID
+//if the user
