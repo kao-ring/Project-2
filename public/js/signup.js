@@ -6,6 +6,14 @@ $(document).ready(function () {
   var passwordInput = $("input#password-input");
   var zipCodeInput = $("input#zipCode-input");
 
+  $.get("api/zip").then((data) => {
+    data.map((zipcode) => {
+      $("#zipSel").append(
+        `<option value=${zipcode} selected="selected">${zipcode}</option>`
+      );
+    });
+  });
+
   // When the signup button is clicked, we validate the email and password are not blank
   signUpForm.on("submit", function (event) {
     event.preventDefault();
