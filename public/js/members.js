@@ -5,16 +5,3 @@ $(document).ready(function () {
     $(".member-name").text(data.email);
   });
 });
-//links with memebers html
-
-//board with members posts
-
-//handled in API routes
-
-//fun stuff==============================
-//updated info in div POST
-//submission
-
-//serious stuff==========================
-//updated info in div POST
-//submission

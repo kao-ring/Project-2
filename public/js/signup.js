@@ -4,6 +4,15 @@ $(document).ready(function () {
   var nameInput = $("input#firstname-input");
   var emailInput = $("input#email-input");
   var passwordInput = $("input#password-input");
+  var zipCodeInput = $("input#zipCode-input");
+
+  $.get("api/zip").then((data) => {
+    data.map((zipcode) => {
+      $("#zipSel").append(
+        `<option value=${zipcode} selected="selected">${zipcode}</option>`
+      );
+    });
+  });
 
   // When the signup button is clicked, we validate the email and password are not blank
   signUpForm.on("submit", function (event) {
@@ -12,6 +21,7 @@ $(document).ready(function () {
       username: nameInput.val().trim(),
       email: emailInput.val().trim(),
       password: passwordInput.val().trim(),
+      zipcode: zipCodeInput.val().trim(),
     };
 
     if (!userData.email || !userData.password) {
@@ -27,8 +37,10 @@ $(document).ready(function () {
   // Otherwise we log any errors
   function signUpUser(email, password) {
     $.post("/api/signup", {
+      username: username,
       email: email,
       password: password,
+      zipcode: zipcode,
     })
       .then(function (data) {
         window.location.replace("/members");
