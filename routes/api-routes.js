@@ -47,3 +47,7 @@ module.exports = function (app) {
     }
   });
 };
+
+//FOR ZIPCODE
+//if user zip input exists, then access in our database with the zipcode ID
+//if the user
