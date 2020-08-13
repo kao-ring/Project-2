@@ -1,22 +1,24 @@
 .jumbotron {
-  background: linear-gradient(rgba(0, 0, 250, 0.25), rgba(125, 250, 250, 0.45)),
+  /* background: linear-gradient(rgba(0, 0, 250, 0.25), rgba(125, 250, 250, 0.45)),
     url(https://media.nationalgeographic.org/assets/photos/000/249/24969.jpg);
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  color: white !important;
+  background-attachment: fixed; */
   height: 100vh;
-  padding-top: 20%;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  padding-top: 10%;
+  padding-bottom: 10%;
 }
 
-#memeberhome {
+#memberhome {
   text-align: center;
 }
 
 .carousel-item {
   width: 100%;
   height: 50%;
+}
+.card-header {
+  font-size: 20px;
+}
+h5 {
+  font-size: 15px;
 }
