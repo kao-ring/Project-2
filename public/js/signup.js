@@ -7,11 +7,33 @@ $(document).ready(function () {
   var passwordInput = $("input#password");
 
   //display the zip codes to the signup page
-  $.get("api/zip").then((data) => {
-    data.map((zipcode) => {
-      $("#zipSel").append(
-        `<option value=${zipcode} selected="selected">${zipcode}</option>`
-      );
+  var state = "NY";
+  var zipArr = [];
+  var settings = {
+    async: true,
+    crossDomain: true,
+    url:
+      "https://vanitysoft-boundaries-io-v1.p.rapidapi.com/reaperfire/rest/v1/public/boundary/state/" +
+      state,
+    method: "GET",
+    headers: {
+      "x-rapidapi-host": "vanitysoft-boundaries-io-v1.p.rapidapi.com",
+      "x-rapidapi-key": "33220dbdedmsh5499ccf0fb9b28fp11bb85jsn968ac695016c",
+    },
+  };
+
+  $.ajax(settings).done(function (response) {
+    console.log(response.features[0].properties.zipCodes);
+    var arr = response.features[0].properties.zipCodes;
+    for (let i = 0; i < arr.length; i++) {
+      let zipcode = arr[i];
+      zipArr.push(zipcode);
+    }
+
+    $(function () {
+      $("#zipcode").autocomplete({
+        source: zipArr,
+      });
     });
   });
 
