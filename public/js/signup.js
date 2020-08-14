@@ -5,7 +5,7 @@ $(document).ready(function () {
   var emailInput = $("input#email-input");
   var passwordInput = $("input#password-input");
   var zipCodeInput = $("input#zipCode-input");
-
+  //display the zip codes to the signup page
   $.get("api/zip").then((data) => {
     data.map((zipcode) => {
       $("#zipSel").append(

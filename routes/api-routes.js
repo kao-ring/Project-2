@@ -50,13 +50,10 @@ module.exports = function (app) {
       });
     }
   });
+  //get all zip codes from database
   app.get("/api/zip", function (req, res) {
     db.Zipcode.findAll({}).then(function (dbZipcode) {
       res.json(dbZipcode);
     });
   });
 };
-
-//FOR ZIPCODE
-//if user zip input exists, then access in our database with the zipcode ID
-//if the user

@@ -5,7 +5,9 @@ $(document).ready(function () {
     $(".member-name").text(data.email);
   });
 });
-//to diplay the latest fun stuff post to the member page
-$.get("/api/members").then(function(data){
-  
-})
+//to display the latest fun stuff post to the member page
+$.get("/api/members").then(function (data) {
+  $("#fun-title").append(
+    `<div id="fun-title">${data.title}</div><div id="fun-description">${data.description}</div>`
+  );
+});
