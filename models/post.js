@@ -14,10 +14,9 @@ module.exports = function (sequelize, DataTypes) {
         len: [4, 50],
       },
     },
-    category: {
-      type: DataTypes.STRING,
+    isFun: {
+      type: DataTypes.BOOLEAN,
       allowNull: false,
-      // validate: {
       //   //CHECK IF THIS IS CORRECT===========>>>>>>
       //   is: {
       //     args: ["fun stuff", "serious stuff"],

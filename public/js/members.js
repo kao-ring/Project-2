@@ -11,3 +11,9 @@ $.get("/api/members").then(function (data) {
     `<div id="fun-title">${data.title}</div><div id="fun-description">${data.description}</div>`
   );
 });
+//display description of chosen item in dropdown list
+$.get("/api/members").then(function (data) {
+  $("#fun-description").append(
+    `<div id="fun-description">${data.description}</div>`
+  );
+});

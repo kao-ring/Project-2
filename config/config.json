@@ -1,9 +1,13 @@
 {
   "development": {
     "username": "root",
+<<<<<<< HEAD
 
     "password": "mysqlpsw",
 
+=======
+    "password": "1@Rootuser",
+>>>>>>> e27837fcbe7cfbc92f1ca0199eb3364eba244969
     "database": "village_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
