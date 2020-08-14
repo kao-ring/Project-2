@@ -66,12 +66,8 @@ module.exports = function (app) {
   app.post("/api/posts", function (req, res) {
     db.Post.create({
       title: req.body.title,
-<<<<<<< HEAD
-      category: req.body.category,
-=======
       //UPDATED
       isFun: req.body.isFun,
->>>>>>> e27837fcbe7cfbc92f1ca0199eb3364eba244969
       description: req.body.description,
     }).then(function (dbPost) {
       res.json(dbPost);
