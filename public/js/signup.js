@@ -5,7 +5,7 @@ $(document).ready(function () {
   var emailInput = $("input#email-input");
   var passwordInput = $("input#password-input");
   var zipCodeInput = $("input#zipCode-input");
-
+  //display the zip codes to the signup page
   $.get("api/zip").then((data) => {
     data.map((zipcode) => {
       $("#zipSel").append(
@@ -37,11 +37,11 @@ $(document).ready(function () {
   // Otherwise we log any errors
   function signUpUser(email, password) {
     $.post("/api/signup", {
-      username: username,
-      email: email,
-      password: password,
-      zipcode: zipcode,
-    })
+        username: username,
+        email: email,
+        password: password,
+        zipcode: zipcode,
+      })
       .then(function (data) {
         window.location.replace("/members");
         // If there's an error, handle it by throwing up a bootstrap alert
