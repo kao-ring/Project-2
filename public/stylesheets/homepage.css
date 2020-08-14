@@ -20,3 +20,155 @@
   width: 100%;
   height: 50%;
 }
+
+h3 {
+
+  padding: 4% 20% 2% 20%;
+}
+
+.stationary {
+  line-height: 36px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+}
+
+.scroll-window {
+  height: 36px;
+  display: inline-block;
+  vertical-align: middle;
+  overflow-y: hidden;
+  text-align-last: justify;
+}
+
+.scroll-container {
+  animation: scroll infinite ease-in-out;
+  animation-duration: 6s;
+
+}
+
+.scrolling {
+  line-height: 50px;
+  margin-bottom: 20px;
+}
+
+@-moz-keyframes scroll {
+  0% {
+    transform: translateY(0px);
+  }
+
+  26.666666666666668% {
+    transform: translateY(0px);
+  }
+
+  33.333333333333336% {
+    transform: translateY(-41px);
+  }
+
+  60.00000000000001% {
+    transform: translateY(-41px);
+  }
+
+  66.66666666666667% {
+    transform: translateY(-82px);
+  }
+
+  93.33333333333333% {
+    transform: translateY(-82px);
+  }
+
+  100% {
+    transform: translateY(-123px);
+  }
+}
+
+@-webkit-keyframes scroll {
+  0% {
+    transform: translateY(0px);
+  }
+
+  26.666666666666668% {
+    transform: translateY(0px);
+  }
+
+  33.333333333333336% {
+    transform: translateY(-41px);
+  }
+
+  60.00000000000001% {
+    transform: translateY(-41px);
+  }
+
+  66.66666666666667% {
+    transform: translateY(-82px);
+  }
+
+  93.33333333333333% {
+    transform: translateY(-82px);
+  }
+
+  100% {
+    transform: translateY(-123px);
+  }
+}
+
+@-o-keyframes scroll {
+  0% {
+    transform: translateY(0px);
+  }
+
+  26.666666666666668% {
+    transform: translateY(0px);
+  }
+
+  33.333333333333336% {
+    transform: translateY(-41px);
+  }
+
+  60.00000000000001% {
+    transform: translateY(-41px);
+  }
+
+  66.66666666666667% {
+    transform: translateY(-82px);
+  }
+
+  93.33333333333333% {
+    transform: translateY(-82px);
+  }
+
+  100% {
+    transform: translateY(-123px);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0px);
+  }
+
+  26.666666666666668% {
+    transform: translateY(0px);
+  }
+
+  33.333333333333336% {
+    transform: translateY(-41px);
+  }
+
+  60.00000000000001% {
+    transform: translateY(-41px);
+  }
+
+  66.66666666666667% {
+    transform: translateY(-82px);
+  }
+
+  93.33333333333333% {
+    transform: translateY(-82px);
+  }
+
+  100% {
+    transform: translateY(-123px);
+  }
+}
