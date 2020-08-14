@@ -11,3 +11,4 @@ $.get("/api/members").then(function (data) {
     `<div id="fun-title">${data.title}</div><div id="fun-description">${data.description}</div>`
   );
 });
+//display
