@@ -10,7 +10,6 @@ module.exports = function (app) {
     res.json(req.user);
     console.log(req.user);
   });
-  
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
@@ -59,17 +58,25 @@ module.exports = function (app) {
       res.json(dbZipcode);
     });
   });
-
-  // Post request for creating a post
-  app.post("/api/posts", function(req, res){
-    db.Post.create({
-      title: req.body.title,
-      category: req.body.category,
-      description: req.body.description
-    }).then(function(dbPost){
+  //GET ROUTE FOR RETRIEVING A SINGLE POST BY ITS ID
+  app.get("/api/posts/id", function (req, res) {
+    db.Post.findOne({ where: { id: req.body.id } }).then(function (dbPost) {
       res.json(dbPost);
-    })
-  })
+      console.log(dbPost);
+    });
+    // Post request for creating a post
+    app.post("/api/posts", function (req, res) {
+      db.Post.create({
+        title: req.body.title,
+        //UPDATED
+        isFun: req.body.isFun,
+        description: req.body.description,
+      }).then(function (dbPost) {
+        res.json(dbPost);
+      });
+    });
+
+    // Add sequelize code to find a single post where the id is equal to req.params.id,
+    // return the result to the user with res.json
+  });
 };
-
-
