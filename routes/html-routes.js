@@ -41,6 +41,11 @@ module.exports = function(app) {
         where:{
           category: "fun stuff"
         }
+      }),
+      seriousPosts: await db.Post.findAll({
+        where:{
+          category: "serious stuff"
+        }
       })
     }
     console.log(viewData);
