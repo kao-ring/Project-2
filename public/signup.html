@@ -1,59 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Login Page</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="stylesheets/signup.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </head>
 
-<head>
-  <title>Login Page</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="stylesheets/signup.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <body>
+    <div class="container px-4 py-5 mx-auto">
+      <div class="card card0">
+        <div class="d-flex flex-lg-row flex-column-reverse">
+          <div class="card card1">
+            <div class="row d-flex px-lg-4 px-3 pt-3"></div>
 
+            <div class="row justify-content-center my-auto">
+              <div class="col-lg-8 my-5">
+                <h3 class="mb-3">
+                  Sign up and get your free Village account now.
+                </h3>
+                <small class="text-muted"
+                  >Enjoy The Village App by letting everyone know what is
+                  happening in your area.</small
+                ><br />
 
-</head>
+                <form class="signup">
+                  <div class="form-group mt-5">
+                    <input
+                      type="text"
+                      id="name"
+                      class="form-control"
+                      required
+                    />
+                    <label class="form-control-placeholder" for="name"
+                      >User Name</label
+                    >
+                  </div>
+                  <div class="form-group mt-4">
+                    <input
+                      type="email"
+                      id="mail"
+                      class="form-control"
+                      required
+                    />
+                    <label class="form-control-placeholder" for="mail"
+                      >Email</label
+                    >
+                  </div>
+                  <div class="form-group mt-4">
+                    <input
+                      type="text"
+                      inputmode="numeric"
+                      id="zipcode"
+                      class="form-control"
+                      required
+                    />
+                    <label class="form-control-placeholder" for="inputZip"
+                      >Zip Code</label
+                    >
+                  </div>
+                  <div class="form-group mt-4">
+                    <input
+                      type="password"
+                      id="password"
+                      class="form-control"
+                      required
+                    />
+                    <label class="form-control-placeholder" for="password"
+                      >Password</label
+                    >
+                  </div>
+                  <div class="row justify-content-center my-3">
+                    <button class="btn btn-gray" type="submit">Sign up</button>
+                  </div>
+                </form>
 
-<body>
-
-  <div class="container px-4 py-5 mx-auto">
-    <div class="card card0">
-      <div class="d-flex flex-lg-row flex-column-reverse">
-        <div class="card card1">
-          <div class="row d-flex px-lg-4 px-3 pt-3">
-
-          </div>
-          <div class="row justify-content-center my-auto">
-            <div class="col-lg-8 my-5">
-              <h3 class="mb-3">Sign up and get your <b></b>free Village account now.</h3> <small
-                class="text-muted">Enjoy The Village App
-                by letting everyone know what is happening in your area.<br></small>
-              <div class="form-group mt-5"> <input type="text" id="name" class="form-control" required> <label
-                  class="form-control-placeholder" for="name">Full Name</label> </div>
-              <div class="form-group mt-4"> <input type="email" id="mail" class="form-control" required> <label
-                  class="form-control-placeholder" for="mail">Email</label> </div>
-              <div class="form-group mt-4"> <input type="email" id="mail" class="form-control" required> <label
-                  class="form-control-placeholder" for="mail">Zip Code</label> </div>
-              <div class="row justify-content-center my-3"> <button class="btn btn-gray">Sign up</button> </div>
-              <div class="row justify-content-center my-2"> <small class="text-muted">or</small> </div>
-              <div class="row justify-content-center my-2"> <a href="#"><img id="google"
-                    src="https://i.imgur.com/8lJt6UN.png" class="mr-2">Sign up with Google</a> </div>
-            </div>
-          </div>
-          <div class="bottom text-center mb-3"> <a href="login.html" class="sm-text mx-auto mb-3">Already have an
-              account?</a>
+                <div class="row justify-content-center my-2">
+                  <small class="text-muted">or</small>
+                </div>
+                <div class="row justify-content-center my-2">
+                  <a href="#"
+                    ><img
+                      id="google"
+                      src="https://i.imgur.com/8lJt6UN.png"
+                      class="mr-2"
+                    />Sign up with Google</a>
+                </div>
+              </div>
           </div>
         </div>
-        <div class="card card2"> <img id="image"
-            src="https://d3u67r7pp2lrq5.cloudfront.net/product_photos/2001082/ShopVillage12x18_original.jpg"> </div>
       </div>
     </div>
-  </div>
-
-  </div>
-  </div>
-  </div>
-</body>
-
+  </body>
 </html>
