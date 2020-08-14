@@ -16,57 +16,53 @@
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
   </script>
   <link rel="stylesheet" href="./stylesheets/homepage.css" />
-  <title>Document</title>
+  <title>Home Page</title>
 </head>
 
-<body>
-  <!-- header and navbar with collapsable links -->
-  <header>
-    <nav class="navbar fixed-top navbar-expand-md navbar-dark" style="background-color: black;">
-      <a class="navbar-brand" href="index.html">The Village App</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
-        aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="signup.html">Sign Up</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="login.html">Log In</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-  <!-- Jumbotron -->
-  <div class="jumbotron" id="home">
-    <h1 class="display-3 stationary">Connect With Your Village!</h1>
-    <h3>Join your village and contribute to make a more positive and prosperous community.</h3>
-    <a class="btn btn-primary btn-lg" href="login.html" role="button">Log In</a>
-    <a class="btn btn-primary btn-lg" href="signup.html" role="button">Join The Village</a>
-  </div>
+<header>
+  <nav class="navbar fixed-top navbar-expand-md navbar-dark" style="font-weight: bold;">
+    <a href="index.html" class="btn btn-secondary btn-lg" role="button" aria-pressed="true">The Village</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+      aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <ul class="navbar-nav ml-auto">
+        <a href="index.html" class="btn btn-secondary" role="button" aria-pressed="true">Home</a>
+        <li class="nav-item">
+          <a href="login.html" class="btn btn-secondary" role="button" aria-pressed="true">Log In</a>
+        </li>
+        <li class="nav-item">
+          <a href="signup.html" class="btn btn-secondary" role="button" aria-pressed="true">Sign Up</a>
+        </li>
+        </li>
+        <li class="nav-item">
+          <a href="signup.html" class="btn btn-secondary" role="button" aria-pressed="true">About Us</a>
+        </li>
+        </li>
+        <li class="nav-item">
+          <a href="signup.html" class="btn btn-secondary" role="button" aria-pressed="true">Contact Us</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
 
-  <div>
-    <div class="carousel-item">
-      <h5>Community Events</h5>
-      <p>
-        Share or learn about important or fun events going on in your
-        community
-      </p>
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Community Events</h5>
-        <p>
-          Share or learn about important or fun events going on in your
-          community
-        </p>
-      </div>
+<body>
+  <div class="tinted-image">
+    <!-- Jumbotron -->
+    <div class=" jumbotron">
+      <h1 class="display-3">Welcome to The Village App!</h1>
+      <h2>Connect with your friends, neighbors and family on the Village.</h2>
+      <hr class="my-2">
+      <h3>Join your village and contribute to make a more positive and prosperous community.</h3>
+
+      <a href="login.html" class="btn btn-secondary btn-lg" role="button" aria-pressed="true">Log In</a>
+      <a href="signup.html" class="btn btn-secondary btn-lg" role="button" aria-pressed="true">Join The
+        Village</a>
     </div>
   </div>
 </body>
+
 
 </html>
