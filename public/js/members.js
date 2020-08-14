@@ -4,7 +4,18 @@ $(document).ready(function () {
   $.get("/api/user_data").then(function (data) {
     $(".member-name").text(data.email);
   });
+  //on search button click get the value
+  $("#fun-search").change(function () {
+    var item = $(this);
+    console.log(item.val());
+  });
+
+  //   $("#fun-search").on("click", function (data) {
+  //     event.preventDefault();
+  //     console.log(data);
+  //   });
 });
+
 //to display the latest fun stuff post to the member page
 // $.get("/api/members").then(function (data) {
 //   $("#fun-title").append(
