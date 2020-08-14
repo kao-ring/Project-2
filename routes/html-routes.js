@@ -46,8 +46,9 @@ module.exports = function(app) {
         where:{
           category: "serious stuff"
         }
-      })
+      }),
     }
+    console.log(req.Post.description)
     console.log(viewData);
     res.render("index", viewData);
   });
