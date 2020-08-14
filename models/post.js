@@ -17,13 +17,11 @@ module.exports = function (sequelize, DataTypes) {
     category: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        //CHECK IF THIS IS CORRECT===========>>>>>>
-        is: {
-          args: [["fun stuff", "serious stuff"]],
-          msg: "Must be fun stuff or serious stuff",
-        },
-      },
+      //CHECK IF THIS IS CORRECT===========>>>>>>
+      // is: {
+      //   args: [["fun stuff", "serious stuff"]],
+      //   msg: "Must be fun stuff or serious stuff",
+      //},
     },
     description: {
       type: DataTypes.TEXT,
