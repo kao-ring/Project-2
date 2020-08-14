@@ -36,6 +36,8 @@ module.exports = function (app) {
     res.redirect("/");
   });
 
+  // get request for username
+
   // Route for getting some data about our user to be used client side
   app.get("/api/user_data", function (req, res) {
     if (!req.user) {
@@ -54,6 +56,18 @@ module.exports = function (app) {
   app.get("/api/zip", function (req, res) {
     db.Zipcode.findAll({}).then(function (dbZipcode) {
       res.json(dbZipcode);
+    });
+  });
+
+  // Post request for creating a post
+  app.post("/api/posts", function (req, res) {
+    db.Post.create({
+      title: req.body.title,
+      //UPDATED
+      isFun: req.body.isFun,
+      description: req.body.description,
+    }).then(function (dbPost) {
+      res.json(dbPost);
     });
   });
 };

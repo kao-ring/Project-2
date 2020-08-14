@@ -14,16 +14,15 @@ module.exports = function (sequelize, DataTypes) {
         len: [4, 50],
       },
     },
-    category: {
-      type: DataTypes.STRING,
+    isFun: {
+      type: DataTypes.BOOLEAN,
       allowNull: false,
-      validate: {
-        //CHECK IF THIS IS CORRECT===========>>>>>>
-        is: {
-          args: [["fun stuff", "serious stuff"]],
-          msg: "Must be fun stuff or serious stuff",
-        },
-      },
+      //   //CHECK IF THIS IS CORRECT===========>>>>>>
+      //   is: {
+      //     args: ["fun stuff", "serious stuff"],
+      //     msg: "Must be fun stuff or serious stuff",
+      //   },
+      // },
     },
     description: {
       type: DataTypes.TEXT,
