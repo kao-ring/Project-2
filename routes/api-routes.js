@@ -62,18 +62,18 @@ module.exports = function (app) {
     });
   });
   //GET ROUTE FOR RETRIEVING A SINGLE POST BY ITS ID
-  app.get("/api/posts/id", function (req, res) {
-    db.Post.findOne({ where: { id: req.body.id } }).then(function (dbPost) {
+  app.get("/api/posts/:id", function (req, res) {
+    db.Post.findOne({ where: { id: req.params.id } }).then(function (dbPost) {
       res.json(dbPost);
       console.log(dbPost);
     });
+  });
     // Post request for creating a post
     app.post("/api/posts", function (req, res) {
       db.Post.create({
         title: req.body.title,
-        //UPDATED
         isFun: req.body.isFun,
-        description: req.body.description,
+        description: req.body.description
       }).then(function (dbPost) {
         res.json(dbPost);
       });
@@ -81,5 +81,4 @@ module.exports = function (app) {
 
     // Add sequelize code to find a single post where the id is equal to req.params.id,
     // return the result to the user with res.json
-  });
-};
+  }
