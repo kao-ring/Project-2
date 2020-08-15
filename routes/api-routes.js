@@ -65,17 +65,17 @@ module.exports = function (app) {
       console.log(dbPost);
     });
   });
-    // Post request for creating a post
-    app.post("/api/posts", function (req, res) {
-      db.Post.create({
-        title: req.body.title,
-        isFun: req.body.isFun,
-        description: req.body.description
-      }).then(function (dbPost) {
-        res.json(dbPost);
-      });
+  // Post request for creating a post
+  app.post("/api/posts", function (req, res) {
+    db.Post.create({
+      title: req.body.title,
+      isFun: req.body.isFun,
+      description: req.body.description,
+    }).then(function (dbPost) {
+      res.json(dbPost);
     });
+  });
 
-    // Add sequelize code to find a single post where the id is equal to req.params.id,
-    // return the result to the user with res.json
-  }
+  // Add sequelize code to find a single post where the id is equal to req.params.id,
+  // return the result to the user with res.json
+};
