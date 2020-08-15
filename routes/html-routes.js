@@ -49,8 +49,12 @@ module.exports = function (app) {
         },
       }),
     };
-    console.log(viewData);
+    console.log(viewData.funPosts);
     res.render("index", viewData);
+  });
+
+  app.get("/submit", function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/submit.html"));
   });
 
   // Here we've add our isAuthenticated middleware to this route.
