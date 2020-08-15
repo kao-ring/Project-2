@@ -24,6 +24,8 @@ $(document).ready(function () {
       isFun: newPost.isFun,
       description: newPost.description,
     }).then(function (data) {
+      console.log(data);
+      alert("Thank you for posting " + data.title);
       window.location.replace("/members");
     });
   });
