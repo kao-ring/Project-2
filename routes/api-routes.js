@@ -59,8 +59,8 @@ module.exports = function (app) {
     });
   });
   //GET ROUTE FOR RETRIEVING A SINGLE POST BY ITS ID
-  app.get("/api/posts/id", function (req, res) {
-    db.Post.findOne({ where: { id: req.body.id } }).then(function (dbPost) {
+  app.get("/api/posts/:id", function (req, res) {
+    db.Post.findOne({ where: { id: req.params.id } }).then(function (dbPost) {
       res.json(dbPost);
       console.log(dbPost);
     });

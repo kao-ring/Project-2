@@ -5,16 +5,39 @@ $(document).ready(function () {
     $(".member-name").text(data.email);
   });
   //on search button click get the value
-  $("#fun-search").change(function () {
-    var item = $(this);
-    console.log(item.val());
+
+  // $("#fun-search").change(function () {
+  //   console.log("hi");
+  // });
+
+  $('#funpostlist').on('change', function() {
+    let id = this.value;
+    $.get(`/api/posts/${id}`).then(function (data) {
+        $("#fun-title").text(data.title);
+        $("#fun-description").text(data.description);
+    });
   });
 
-  //   $("#fun-search").on("click", function (data) {
-  //     event.preventDefault();
-  //     console.log(data);
-  //   });
-});
+  $('#seriouspostlist').on('change', function() {
+    let id = this.value;
+    $.get(`/api/posts/${id}`).then(function (data) {
+        $("#serious-title").text(data.title);
+        $("#serious-description").text(data.description);
+    });
+  });
+
+//   $("#fun-search").on("click", function () {
+//     event.preventDefault();
+//     // grab id
+//     console.log($(this));
+//     var id;
+//     $.get(`/api/posts/${id}`).then(function (data) {
+//       // $(".member-name").text(data.email);
+//     });
+//     // get request with id
+    
+//   });
+// });
 
 //to display the latest fun stuff post to the member page
 // $.get("/api/members").then(function (data) {
@@ -27,4 +50,4 @@ $(document).ready(function () {
 //   $("#fun-description").text(
 //     `<div id="fun-description">${this.data.description}</div>`
 //   );
-// });
+});
