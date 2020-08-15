@@ -22,14 +22,17 @@ module.exports = function (app) {
       password: req.body.password,
       zipcode: req.body.zipcode,
     })
-      .then(function () {
+      .then(function (data) {
         res.redirect(307, "/api/login");
       })
       .catch(function (err) {
-        res.status(401).json(err);
+        //make sure email isnt in use========= using map or .filter (go through array)
+        var errors = err.errors.map((error) => error.message);
+        console.log(errors);
+        res.json(errors);
+        //return to front end (output)
       });
   });
-
   // Route for logging user out
   app.get("/logout", function (req, res) {
     req.logout();
