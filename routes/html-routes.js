@@ -11,7 +11,9 @@ module.exports = function (app) {
     if (req.user) {
       res.redirect("/members");
     }
-    res.sendFile(path.join(__dirname, "../public/index.html"));
+    res.render("index", {
+      styles: "homepage.css"
+    });
   });
 
   app.get("/login", function (req, res) {
@@ -19,16 +21,16 @@ module.exports = function (app) {
     if (req.user) {
       res.redirect("/members");
     }
-    res.sendFile(path.join(__dirname, "../public/login.html"));
+    res.render("login", {
+      styles: "login.css"
+    });
   });
 
   app.get("/signup", function (req, res) {
-    res.sendFile(path.join(__dirname, "../public/signup.html"));
+    res.render("signup", {
+      styles: "signup.css"
+    });
   });
-
-  // app.get("/members", function (req, res) {
-  //   res.sendFile(path.join(__dirname, "../public/members.html"));
-  // });
 
   // Renders index.handlebars file
   app.get("/members", async function (req, res) {
@@ -48,18 +50,23 @@ module.exports = function (app) {
           isFun: false,
         },
       }),
+      styles: "memberspage.css"
     };
     console.log(viewData.funPosts);
-    res.render("index", viewData);
+    res.render("members", viewData);
   });
 
   app.get("/submit", function (req, res) {
-    res.sendFile(path.join(__dirname, "../public/submit.html"));
+    res.render("submit", {
+      styles: "submit.css"
+    });
   });
 
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/members", isAuthenticated, function (req, res) {
-    res.sendFile(path.join(__dirname, "../public/signup.html"));
+    res.render("signup", {
+      styles: "signup.css"
+    });
   });
 };
