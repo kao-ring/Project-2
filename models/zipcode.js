@@ -14,6 +14,7 @@ module.exports = function (sequelize, DataTypes) {
   Zipcode.associate = function (models) {
     Zipcode.hasMany(models.User);
     Zipcode.hasOne(models.Board);
+    Zipcode.hasMany(models.Post);
   };
   return Zipcode;
 };

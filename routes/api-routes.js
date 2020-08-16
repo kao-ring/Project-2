@@ -15,24 +15,24 @@ module.exports = function (app) {
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
 
-  app.post("/api/signup", function (req, res) {
-    db.User.create({
-      username: req.body.username,
-      email: req.body.email,
-      password: req.body.password,
-      zipcode: req.body.zipcode,
-    })
-      .then(function (data) {
-        res.redirect(307, "/api/login");
-      })
-      .catch(function (err) {
-        //make sure email isnt in use========= using map or .filter (go through array)
-        var errors = err.errors.map((error) => error.message);
-        console.log(errors);
-        res.json(errors);
-        //return to front end (output)
-      });
-  });
+  // app.post("/api/signup", function (req, res) {
+  //   db.User.create({
+  //     username: req.body.username,
+  //     email: req.body.email,
+  //     password: req.body.password,
+  //     zipcode: req.body.zipcode,
+  //   })
+  //     .then(function (data) {
+  //       res.redirect(307, "/api/login");
+  //     })
+  //     .catch(function (err) {
+  //       //make sure email isnt in use========= using map or .filter (go through array)
+  //       var errors = err.errors.map((error) => error.message);
+  //       console.log(errors);
+  //       res.json(errors);
+  //       //return to front end (output)
+  //     });
+  // });
   // Route for logging user out
   app.get("/logout", function (req, res) {
     req.logout();
@@ -135,11 +135,42 @@ module.exports = function (app) {
       isFun: req.body.isFun,
       description: req.body.description,
       UserId: req.user.id,
+      ZipcodeId: req.user.ZipcodeId
     }).then(function (dbPost) {
       res.json(dbPost);
     });
   });
 
+  app.post("/api/signup", async function (req, res) {
+      try {
+        let zipcodeId;
+        const foundZipcode = await db.Zipcode.findOne({
+          where: { zipcode: req.body.zipcode },
+        });
+        if (foundZipcode) {
+          zipcodeId = foundZipcode.id;
+        } else {
+          const newZipcode = await db.Zipcode.create({
+            zipcode: req.body.zipcode,
+          });
+          zipcodeId = newZipcode.id;
+        }
+        await db.User.create({
+          username: req.body.username,
+          email: req.body.email,
+          password: req.body.password,
+          ZipcodeId: zipcodeId,
+        });
+      } catch (error) {
+        var errors = error.errors.map((error) => error.message);
+        console.log(errors);
+        return res.json(errors);
+      }
+      res.redirect(307, "/api/login");
+    });
   // Add sequelize code to find a single post where the id is equal to req.params.id,
   // return the result to the user with res.json
 };
+
+
+
