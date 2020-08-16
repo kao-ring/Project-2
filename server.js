@@ -43,11 +43,7 @@ require("./routes/api-routes.js")(app);
 require("./routes/html-routes.js")(app);
 
 // Syncing our database and logging a message to the user upon success
-<<<<<<< HEAD
 db.sequelize.sync({}).then(function () {
-=======
-db.sequelize.sync({ force: true }).then(function () {
->>>>>>> 6cbb5359d3eedee9840001907805048f78f78ad3
   app.listen(PORT, function () {
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",

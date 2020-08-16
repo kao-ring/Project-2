@@ -6,8 +6,8 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   float: center;
-  padding-top: 5%;
-  ;
+  padding-top: 3.5%;
+
 }
 
 input,
@@ -55,8 +55,8 @@ button:focus {
   position: relative;
   margin: auto;
   width: 40%;
-  height: 85vh;
-  margin-bottom: 5%
+  white-space: no-wrap;
+
 }
 
 .card1 {
