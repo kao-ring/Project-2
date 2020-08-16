@@ -1,11 +1,39 @@
-.tinted-image {
-  background:
-    /* top, transparent red, faked with gradient */ linear-gradient(
-      rgba(255, 0, 0, 0.1),
-      rgba(255, 0, 0, 0.1)
+.jumbotron{
+  background: 
+  linear-gradient(
+      rgba(0, 0, 250, 0.25), 
+      rgba(125, 250, 250, 0.45)
     ),
-    /* bottom, image */ url("/assets/hut.jpg");
-  min-height: 100vh;
+  url(https://media.nationalgeographic.org/assets/photos/000/249/24969.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color:white !important;
+  height:100vh;
+  padding-top: 20%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#home{
+  text-align: center;
+}
+
+.carousel-item{
+  width: 100%;
+  height: 50%;
+}
+
+
+/* .tinted-image {
+  background:
+    top, transparent red, faked with gradient linear-gradient(
+      /* rgba(255, 0, 0, 0.1),
+      rgba(255, 0, 0, 0.1) */
+    /* ), */
+    /* bottom, image  url("../assets/hut.jpg");*/
+  /* min-height: 100vh;
   background-size: 100%;
   text-align: center;
   padding-top: 12%;
@@ -24,4 +52,4 @@ h3 {
 .btn-secondary {
   margin-right: 10px;
   margin-left: 10px;
-}
+} */ 
