@@ -69,10 +69,11 @@ $(document).ready(function () {
         window.location.replace("/members");
         // If there's an error, handle it by throwing up a bootstrap alert
       })
-      .catch(handleLoginErr);
+      // .catch(handleLoginErr);
   }
 
   function handleLoginErr(err) {
+    console.log(err);
     $("#alert .msg").text(err.responseJSON);
     $("#alert").fadeIn(500);
   }

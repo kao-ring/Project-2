@@ -1,0 +1,82 @@
+<!-- header and navbar with collapsable links -->
+<header>
+  <nav class="navbar fixed-top navbar-expand-md navbar-dark" style="background-color: black;">
+    <a class="navbar-brand" href="/">The Village App</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+      aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">About</a>
+        </li>
+        <li class="nav-item">
+          <!-- signout page not made yet-->
+          <a class="nav-link" href="/signout">Sign Out</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<div class="jumbotron" id="memberhome">
+  <h1 class="display-3">Welcome, {{ username }}</h1>
+  <h3>Scroll to explore your community.</h3>
+  <div class="card text-center">
+    <div class="card-header">
+      The Fun Stuff
+      <select id="funpostlist" size="1">
+        <option value="">---Read More Fun stuff---</option>
+        {{#each funPosts}}
+        <option value="{{this.dataValues.id}}">{{ dataValues.title }}</option>
+        {{/each}}
+      </select>
+      <a href="/submit">Submit Something Fun</a>
+    </div>
+    <div class="card-body" id="funstuff">
+      <div id="latest">
+        <div id="fun-title"></div>
+        <div id="fun-description"></div>
+      </div>
+
+      <div id="clicked-post">
+      </div>
+    </div>
+
+  </div>
+  <hr>
+  <div class="card text-center">
+    <div class="card-header">
+      The Serious Stuff
+      <select id="seriouspostlist" size="1">
+        <option value="" selected="selected">---Read More Serious stuff---</option>
+        {{#each seriousPosts}}
+        <option value="{{this.dataValues.id}}">{{ dataValues.title }}</option>
+        {{/each}}
+      </select>
+      <a href="/submit">Submit Something Serious</a>
+    </div>
+    <div class="card-body" id="seriousstuff">
+      <div id="serious-title"></div>
+      <div id="serious-description"></div>
+      <div id="clicked-post">
+        <h5 class="card-title"></h5>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+  <div class="card text-center">
+    <div class="card-header">
+      Your Posts
+    </div>
+    <div class="card-body" id="memberhistory">
+      <button class="btn btn-primary" id="btn" name={{userid}}><h5 class="card-title">Your history of Submissions</h5></button>
+      <ul id="currentposts"></ul>
+    </div>
+
+  </div>
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/members.js"></script>

@@ -22,14 +22,17 @@ module.exports = function (app) {
       password: req.body.password,
       zipcode: req.body.zipcode,
     })
-      .then(function () {
+      .then(function (data) {
         res.redirect(307, "/api/login");
       })
       .catch(function (err) {
-        res.status(401).json(err);
+        //make sure email isnt in use========= using map or .filter (go through array)
+        var errors = err.errors.map((error) => error.message);
+        console.log(errors);
+        res.json(errors);
+        //return to front end (output)
       });
   });
-
   // Route for logging user out
   app.get("/logout", function (req, res) {
     req.logout();
@@ -58,25 +61,85 @@ module.exports = function (app) {
       res.json(dbZipcode);
     });
   });
+
+
+
   //GET ROUTE FOR RETRIEVING A SINGLE POST BY ITS ID
-  app.get("/api/posts/id", function (req, res) {
-    db.Post.findOne({ where: { id: req.body.id } }).then(function (dbPost) {
+  app.get("/api/posts/:id", function (req, res) {
+    db.Post.findOne({ 
+      where: { 
+        id: req.params.id 
+      } 
+    }).then(function (dbPost) {
       res.json(dbPost);
       console.log(dbPost);
     });
-    // Post request for creating a post
-    app.post("/api/posts", function (req, res) {
-      db.Post.create({
-        title: req.body.title,
-        //UPDATED
-        isFun: req.body.isFun,
-        description: req.body.description,
-      }).then(function (dbPost) {
-        res.json(dbPost);
-      });
-    });
-
-    // Add sequelize code to find a single post where the id is equal to req.params.id,
-    // return the result to the user with res.json
   });
+
+  //Get all of the users from the database
+  app.get("/api/users", function(req, res) {
+    db.User.findAll({
+      include: [db.Post]
+    }).then(function(dbUser) {
+      res.json(dbUser);
+    });
+  });
+
+  // Get a specific user's posts from the database
+  app.get("/api/users/:id", function (req, res) {
+    db.User.findOne({
+      where: { 
+        id: req.params.id 
+      },
+      include: [db.Post]
+    }).then(function (dbUser) {
+      res.json(dbUser);
+    });
+  });
+
+  // GET route for getting all of the posts
+  app.get("/api/posts", function(req, res) {
+    var query = {};
+    if (req.query.user_id) {
+      query.UserId = req.query.user_id;
+    }
+    // Here we add an "include" property to our options in our findAll query
+    // We set the value to an array of the models we want to include in a left outer join
+    // In this case, just db.Author
+    db.Post.findAll({
+      where: query,
+      include: [db.User]
+    }).then(function(dbPost) {
+      res.json(dbPost);
+    });
+  });
+
+  // Get route for retrieving a single post
+  app.get("/api/posts/:id", function(req, res) {
+    // Here we add an "include" property to our options in our findOne query
+    // We set the value to an array of the models we want to include in a left outer join
+    // In this case, just db.Author
+    db.Post.findOne({
+      where: {
+        id: req.params.id
+      },
+      include: [db.User]
+    }).then(function(dbPost) {
+      res.json(dbPost);
+    });
+  });
+  
+  app.post("/api/posts", function (req, res) {
+    db.Post.create({
+      title: req.body.title,
+      isFun: req.body.isFun,
+      description: req.body.description,
+      UserId: req.user.id,
+    }).then(function (dbPost) {
+      res.json(dbPost);
+    });
+  });
+
+  // Add sequelize code to find a single post where the id is equal to req.params.id,
+  // return the result to the user with res.json
 };
