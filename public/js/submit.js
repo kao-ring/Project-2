@@ -1,3 +1,11 @@
+console.log(location.search);
+
+if (location.search.split("=")[1] === "true") {
+  $("#fun").attr("checked", "checked");
+} else {
+  $("#serious").attr("checked", "checked");
+}
+
 $(document).ready(function () {
   var form = $("form#form1");
   var title = $("#title");

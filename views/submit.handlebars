@@ -2,17 +2,37 @@
     <form action="#" class="form" id="form1">
         <h2 class="form__title">Submit a Form</h2>
 
-        <label class="container2">Fun
-            <input type="radio" checked="checked" name="radio" value="true" />
-            <label class="container1">Serious
-                <input type="radio" checked="checked" name="radio" value="false" />
-            </label>
-        </label>
+        <div>
+            <label class="container2">Fun</label>
+            <input id="fun" type="radio" name="radio" value="true" />
+            <label class="container1">Serious </label>
+            <input id="serious" type="radio" name="radio" value="false" />
+        </div>
 
         <input type="text" placeholder="Title" class="input" id="title" />
         <textarea type="text" placeholder="Discription" class="input" rows="5" id="description"></textarea>
-
-        <button class="btn" type="submit">Submit</button>
+        {{!-- Modal --}}
+        <div id="myInput" class="modal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Thank you for your submission.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+                </div>
+            </div>
+        </div>
+        {{!-- Modal --}}
+        <button class="btn" type="submit" data-toggle="modal" data-target="myInput" id="myModal">Submit</button>
     </form>
 
 </div>
