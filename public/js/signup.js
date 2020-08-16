@@ -12,8 +12,7 @@ $(document).ready(function () {
   var settings = {
     async: true,
     crossDomain: true,
-    url:
-      "https://vanitysoft-boundaries-io-v1.p.rapidapi.com/reaperfire/rest/v1/public/boundary/state/" +
+    url: "https://vanitysoft-boundaries-io-v1.p.rapidapi.com/reaperfire/rest/v1/public/boundary/state/" +
       state,
     method: "GET",
     headers: {
@@ -60,16 +59,16 @@ $(document).ready(function () {
   // Otherwise we log any errors
   function signUpUser(userData) {
     $.post("/api/signup", {
-      username: userData.username,
-      email: userData.email,
-      password: userData.password,
-      zipcode: userData.zipcode,
-    })
+        username: userData.username,
+        email: userData.email,
+        password: userData.password,
+        zipcode: userData.zipcode,
+      })
       .then(function (data) {
         window.location.replace("/members");
         // If there's an error, handle it by throwing up a bootstrap alert
       })
-      // .catch(handleLoginErr);
+    // .catch(handleLoginErr);
   }
 
   function handleLoginErr(err) {

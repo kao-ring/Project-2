@@ -62,14 +62,22 @@ module.exports = function (app) {
     });
   });
 
-
+  app.post("/api/zip", function (req, res) {
+    db.Zipcode.create(req.body)
+      .then(function (response) {
+        res.json(response);
+      })
+      .catch(function (err) {
+        res.status(500).send(err);
+      });
+  });
 
   //GET ROUTE FOR RETRIEVING A SINGLE POST BY ITS ID
   app.get("/api/posts/:id", function (req, res) {
-    db.Post.findOne({ 
-      where: { 
-        id: req.params.id 
-      } 
+    db.Post.findOne({
+      where: {
+        id: req.params.id,
+      },
     }).then(function (dbPost) {
       res.json(dbPost);
       console.log(dbPost);
@@ -77,10 +85,10 @@ module.exports = function (app) {
   });
 
   //Get all of the users from the database
-  app.get("/api/users", function(req, res) {
+  app.get("/api/users", function (req, res) {
     db.User.findAll({
-      include: [db.Post]
-    }).then(function(dbUser) {
+      include: [db.Post],
+    }).then(function (dbUser) {
       res.json(dbUser);
     });
   });
@@ -88,17 +96,17 @@ module.exports = function (app) {
   // Get a specific user's posts from the database
   app.get("/api/users/:id", function (req, res) {
     db.User.findOne({
-      where: { 
-        id: req.params.id 
+      where: {
+        id: req.params.id,
       },
-      include: [db.Post]
+      include: [db.Post],
     }).then(function (dbUser) {
       res.json(dbUser);
     });
   });
 
   // GET route for getting all of the posts
-  app.get("/api/posts", function(req, res) {
+  app.get("/api/posts", function (req, res) {
     var query = {};
     if (req.query.user_id) {
       query.UserId = req.query.user_id;
@@ -108,27 +116,27 @@ module.exports = function (app) {
     // In this case, just db.Author
     db.Post.findAll({
       where: query,
-      include: [db.User]
-    }).then(function(dbPost) {
+      include: [db.User],
+    }).then(function (dbPost) {
       res.json(dbPost);
     });
   });
 
   // Get route for retrieving a single post
-  app.get("/api/posts/:id", function(req, res) {
+  app.get("/api/posts/:id", function (req, res) {
     // Here we add an "include" property to our options in our findOne query
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.Author
     db.Post.findOne({
       where: {
-        id: req.params.id
+        id: req.params.id,
       },
-      include: [db.User]
-    }).then(function(dbPost) {
+      include: [db.User],
+    }).then(function (dbPost) {
       res.json(dbPost);
     });
   });
-  
+
   app.post("/api/posts", function (req, res) {
     db.Post.create({
       title: req.body.title,
