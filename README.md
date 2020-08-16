@@ -1,21 +1,27 @@
-# Project-2: The VILLAGE
+# Project-2: THE VILLAGE
 
 ## Description
 
-THE VILLAGE app allows people from a specific area(zipcode) to check local activities shared by thir community.
+The Village app allows people from a specific area(zipcode) to check local activities shared by thir community.
+
+---
 
 ## Table of Contents
 
 1. [Installation](#Installation)
 2. [Usage](#Usage)
-3. [Github repository and Deployed Heroku](#Github-repository-Deployed-Heroku)
+3. [GitHub repository and Deployed Heroku](#GitHub-repository-Deployed-Heroku)
 4. [Contributors and Questions](#Contributors-Questions)
+
+---
 
 ## Installation
 
 - Make sure to `npm install`, from the `package.json` file in terminal in order to get the app running with all dependencies needed.
 - Also make sure to run the schema in your Mysql Workbench to get the database running.
 - Open your browser to `localhost:8080` to get access to the homepage of the Village.
+
+---
 
 ## Usage
 
@@ -26,14 +32,18 @@ THE VILLAGE app allows people from a specific area(zipcode) to check local activ
 - Finally, they are able to view a history of the activities they posted on the bottom of the member page.
 - When they are done, they can LOGOUT.
 
-### Github-repository-Deployed-Heroku
+---
 
-- Github repository:
-  [Github repository](https://github.com/kao-ring/Project-2.git)
+### GitHub-repository-Deployed-Heroku
+
+- GitHub repository:
+  [GitHub repository](https://github.com/kao-ring/Project-2.git)
 - Heroku Deployed:
   [Deployed link](https://limitless-refuge-18664.herokuapp.com/)
 
-### #Contributors-Questions
+---
+
+### Contributors-Questions
 
 - Contributors and Github links:
 
@@ -45,4 +55,9 @@ THE VILLAGE app allows people from a specific area(zipcode) to check local activ
 
 - For any questions about this app or if you'd like to contribute, please refer to our Github page or contact us by email!
 - [The Village app Github link](https://github.com/kao-ring/Project-2.git)
-- [Team member emails](devonbrewster31@gmail.com)(kao.ring@yahoo.com)(melissa.a.merc@gmail.com)(1jessicaperez@gmail.com)(joshwilensky@gmail.com)
+- Team member emails:
+  (devonbrewster31@gmail.com)
+  (kao.ring@yahoo.com)
+  (melissa.a.merc@gmail.com)
+  (1jessicaperez@gmail.com)
+  (joshwilensky@gmail.com)
