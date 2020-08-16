@@ -12,7 +12,7 @@ module.exports = function (app) {
       res.redirect("/members");
     }
     res.render("index", {
-      styles: "homepage.css"
+      styles: "homepage.css",
     });
   });
 
@@ -22,13 +22,13 @@ module.exports = function (app) {
       res.redirect("/members");
     }
     res.render("login", {
-      styles: "login.css"
+      styles: "login.css",
     });
   });
 
   app.get("/signup", function (req, res) {
     res.render("signup", {
-      styles: "signup.css"
+      styles: "signup.css",
     });
   });
 
@@ -51,17 +51,15 @@ module.exports = function (app) {
           isFun: false,
         },
       }),
-      styles: "memberspage.css"
+      styles: "memberspage.css",
     };
     console.log(viewData.funPosts);
     res.render("members", viewData);
   });
 
-
-
   app.get("/submit", function (req, res) {
     res.render("submit", {
-      styles: "submit.css"
+      styles: "submit.css",
     });
   });
 
@@ -69,7 +67,7 @@ module.exports = function (app) {
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/members", isAuthenticated, function (req, res) {
     res.render("signup", {
-      styles: "signup.css"
+      styles: "signup.css",
     });
   });
 };
