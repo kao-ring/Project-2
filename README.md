@@ -45,3 +45,4 @@ THE VILLAGE app allows people from a specific area(zipcode) to check local activ
 - For any questions about this app or if you'd like to contribute, please refer to our Github page or contact us by email!
   [The Village app Github link:](https://github.com/JessicaPerez1)
   devonbrewster31@gmail.com, kao.ring@yahoo.com, melissa.a.merc@gmail.com, 1jessicaperez@gmail.com,
+# test222
