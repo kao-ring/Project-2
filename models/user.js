@@ -34,6 +34,7 @@ module.exports = function (sequelize, DataTypes) {
     //     allowNull: false
     //   }
     // });
+    User.belongsTo(models.Zipcode);
     User.hasMany(models.Post);
   };
 

@@ -15,23 +15,88 @@ module.exports = function (app) {
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
 
-  app.post("/api/signup", function (req, res) {
-    db.User.create({
-      username: req.body.username,
-      email: req.body.email,
-      password: req.body.password,
-      zipcode: req.body.zipcode,
-    })
-      .then(function (data) {
-        res.redirect(307, "/api/login");
-      })
-      .catch(function (err) {
-        //make sure email isnt in use========= using map or .filter (go through array)
-        var errors = err.errors.map((error) => error.message);
-        console.log(errors);
-        res.json(errors);
-        //return to front end (output)
-      });
+  // app.post("/api/signup", async function (req, res) {
+  //   try {
+  //     let zipcodeId;
+
+  //     const foundZipcode = await db.Zipcode.findOne({
+  //       where: { zipcode: req.body.zipcode },
+  //     });
+
+  //     if (foundZipcode) {
+  //       zipcodeId = foundZipcode.id;
+  //     } else {
+  //       const newZipcode = await db.Zipcode.create({
+  //         zipcode: req.body.zipcode,
+  //       });
+  //       zipcodeId = newZipcode.id;
+  //     }
+
+  //     await db.User.create({
+  //       username: req.body.username,
+  //       email: req.body.email,
+  //       password: req.body.password,
+  //       ZipcodeId: zipcodeId,
+  //     });
+  //   } catch (error) {
+  //     var errors = error.errors.map((error) => error.message);
+  //     console.log(errors);
+  //     return res.json(errors);
+  //   }
+  //   res.redirect(307, "/api/login");
+  app.post("/api/signup", async function (req, res) {
+    db.Zipcode.findOne({ where: { zipcode: req.body.zipcode } }).then(function (
+      foundZipcode
+    ) {
+      if (!foundZipcode) {
+        console.log("NOT FOUND", req.body.zipcode);
+        db.Zipcode.create({ zipcode: req.body.zipcode })
+          .then(function (newZipcode) {
+            db.User.create({
+              username: req.body.username,
+              email: req.body.email,
+              password: req.body.password,
+              ZipcodeId: newZipcode.id,
+            })
+              .then(function (data) {
+                return res.redirect(307, "/api/login");
+              })
+              .catch(function (err) {
+                //make sure email isnt in use========= using map or .filter (go through array)
+                var errors = err.errors.map((error) => error.message);
+                console.log(errors);
+                res.json(errors);
+                //return to front end (output)
+              });
+          })
+          .catch(function (err) {
+            //make sure email isnt in use========= using map or .filter (go through array)
+            var errors = err.errors.map((error) => error.message);
+            console.log(errors);
+            res.json(errors);
+            //return to front end (output)
+          });
+      } else {
+        console.log(foundZipcode);
+
+        db.User.create({
+          username: req.body.username,
+          email: req.body.email,
+          password: req.body.password,
+          ZipcodeId: foundZipcode.id,
+        })
+          .then(function (data) {
+            res.redirect(307, "/api/login");
+          })
+          .catch(function (err) {
+            //make sure email isnt in use========= using map or .filter (go through array)
+            var errors = err.errors.map((error) => error.message);
+            console.log(errors);
+            res.json(errors);
+            //return to front end (output)
+          });
+      }
+    });
   });
   // Route for logging user out
   app.get("/logout", function (req, res) {
@@ -60,6 +125,16 @@ module.exports = function (app) {
     db.Zipcode.findAll({}).then(function (dbZipcode) {
       res.json(dbZipcode);
     });
+  });
+
+  app.post("/api/zip", function (req, res) {
+    db.Zipcode.create(req.body)
+      .then(function (response) {
+        res.json(response);
+      })
+      .catch(function (err) {
+        res.status(500).send(err);
+      });
   });
 
   //GET ROUTE FOR RETRIEVING A SINGLE POST BY ITS ID
