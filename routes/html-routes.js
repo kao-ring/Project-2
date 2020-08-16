@@ -38,6 +38,7 @@ module.exports = function (app) {
     const viewData = {
       username: req.user.username,
       email: req.user.email,
+      userid: req.user.id,
       funPosts: await db.Post.findAll({
         where: {
           //changes to BOOLEAN to match new MODEL
@@ -55,6 +56,8 @@ module.exports = function (app) {
     console.log(viewData.funPosts);
     res.render("members", viewData);
   });
+
+
 
   app.get("/submit", function (req, res) {
     res.render("submit", {

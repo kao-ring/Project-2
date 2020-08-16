@@ -26,6 +26,20 @@ $(document).ready(function () {
     });
   });
 
+    $('#btn').on('click', function(){
+      let user = $(this).attr('name');
+      alert(user);
+      $.get(`/api/users/${user}`).then(function (data) {
+        for(var i = 0; i < data.Posts.length; i++){
+          $("#currentposts").append(`<h5>${data.Posts[i].title}</h5>`);
+          $("#currentposts").append(`<p>${data.Posts[i].description}</p>`);
+        }        
+    });
+  });
+
+  
+
+
 //   $("#fun-search").on("click", function () {
 //     event.preventDefault();
 //     // grab id
