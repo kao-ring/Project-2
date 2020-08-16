@@ -1,14 +1,13 @@
 body {
   color: #000;
   overflow-x: hidden;
-  height: 100%;
   background:
-    url(https://media.nationalgeographic.org/assets/photos/000/249/24969.jpg);
+    url(https://images.pexels.com/photos/280221/pexels-photo-280221.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
   background-repeat: no-repeat;
   background-size: cover;
   float: center;
-  opacity: .8;
-  padding-top: 2%;
+  padding-top: 5%;
+  ;
 }
 
 input,
@@ -23,8 +22,14 @@ textarea {
   font-size: 18px !important;
   color: #000 !important;
   font-weight: 300;
+}
 
+.navbar {
+  opacity: 0.5;
+}
 
+.fixed-bottom {
+  opacity: 0.5;
 }
 
 input:focus,
@@ -45,11 +50,13 @@ button:focus {
 }
 
 .card {
-  border-radius: 5%;
+  border-radius: 1%;
   border: none;
   position: relative;
   margin: auto;
-  width: fit-content;
+  width: 40%;
+  height: 85vh;
+  margin-bottom: 5%
 }
 
 .card1 {
