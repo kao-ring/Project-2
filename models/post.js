@@ -32,10 +32,10 @@ module.exports = function (sequelize, DataTypes) {
       },
     },
   });
-  // Post.associate = function (models) {
-  //   // Post.hasOne(models.User);
-  //   // Post.hasOne(models.Board);
-  // };
+  Post.associate = function (models) {
+    Post.hasOne(models.Zipcode);
+    Post.belongsTo(models.User);
+  };
 
   return Post;
 };
