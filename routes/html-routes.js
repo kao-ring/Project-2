@@ -40,6 +40,9 @@ module.exports = function (app) {
 
   // Renders index.handlebars file
   app.get("/members", async function (req, res) {
+    console.log("this post");
+    var zipCode = req.user.ZipcodeId;
+    console.log(zipCode);
     console.log(req.user);
     const viewData = {
       username: req.user.username,
@@ -49,12 +52,14 @@ module.exports = function (app) {
         where: {
           //changes to BOOLEAN to match new MODEL
           isFun: true,
+          ZipcodeId: zipCode
         },
       }),
       seriousPosts: await db.Post.findAll({
         where: {
           //UPDATED
           isFun: false,
+          ZipcodeId: zipCode
         },
       }),
       styles: "memberspage.css",
