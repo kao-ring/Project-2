@@ -7,12 +7,9 @@ module.exports = function (sequelize, DataTypes) {
         isNumeric: true,
         len: [5],
       },
-      allowNull: false
+      allowNull: false,
     },
   });
-  Zipcode.associate = function (models) {
-    Zipcode.hasMany(models.User);
-    Zipcode.hasOne(models.Board);
-  };
+
   return Zipcode;
 };
