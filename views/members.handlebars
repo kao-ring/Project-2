@@ -13,7 +13,7 @@
         </li>
         <li class="nav-item">
           <!-- signout page not made yet-->
-          <a class="nav-link" href="/signout">Sign Out</a>
+          <a class="nav-link" href="/logout">Sign Out</a>
         </li>
       </ul>
     </div>
@@ -71,7 +71,9 @@
       Your Posts
     </div>
     <div class="card-body" id="memberhistory">
-      <button class="btn btn-primary" id="btn" name={{userid}}><h5 class="card-title">Your history of Submissions</h5></button>
+      <button class="btn btn-primary" id="btn" name={{userid}}>
+        <h5 class="card-title">Your history of Submissions</h5>
+      </button>
       <ul id="currentposts"></ul>
     </div>
 
