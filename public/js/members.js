@@ -36,6 +36,9 @@ $(document).ready(function () {
     });
   });
 
+  //on click==when we click on LOGOUT
+  //then delete activities from dropdown list
+
   //   $("#fun-search").on("click", function () {
   //     event.preventDefault();
   //     // grab id

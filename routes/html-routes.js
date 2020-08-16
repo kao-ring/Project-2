@@ -31,12 +31,6 @@ module.exports = function (app) {
       styles: "signup.css",
     });
   });
-  //redirect signout page from members page
-  app.get("/signout", function (req, res) {
-    res.render("signout", {
-      styles: "signout.css",
-    });
-  });
 
   // Renders index.handlebars file
   app.get("/members", async function (req, res) {
@@ -52,14 +46,14 @@ module.exports = function (app) {
         where: {
           //changes to BOOLEAN to match new MODEL
           isFun: true,
-          ZipcodeId: zipCode
+          ZipcodeId: zipCode,
         },
       }),
       seriousPosts: await db.Post.findAll({
         where: {
           //UPDATED
           isFun: false,
-          ZipcodeId: zipCode
+          ZipcodeId: zipCode,
         },
       }),
       styles: "memberspage.css",
@@ -67,8 +61,6 @@ module.exports = function (app) {
     console.log(viewData.funPosts);
     res.render("members", viewData);
   });
-
-
 
   app.get("/submit", function (req, res) {
     res.render("submit", {
