@@ -3,7 +3,11 @@ module.exports = function (sequelize, DataTypes) {
     title: DataTypes.STRING
   });
   Board.associate = function (models) {
-    // Board.hasOne(models.Zipcode);
+    // Board.belongsTo(models.Zipcode, {
+    //   foreignKey: {
+    //     allowNull: false
+    //   }
+    // });
     Board.hasMany(models.Post);
   };
 

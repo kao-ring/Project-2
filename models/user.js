@@ -29,7 +29,11 @@ module.exports = function (sequelize, DataTypes) {
     },
   });
   User.associate = function (models) {
-    // User.hasOne(models.Zipcode);
+    // User.belongsTo(models.Zipcode, {
+    //   foreignKey: {
+    //     allowNull: false
+    //   }
+    // });
     User.hasMany(models.Post);
   };
 
