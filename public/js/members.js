@@ -22,6 +22,7 @@ $(document).ready(function () {
   });
 
   $("#btn").on("click", function () {
+    $("#currentposts").empty();
     let user = $(this).attr("name");
     $.get(`/api/users/${user}`).then(function (data) {
       for (var i = 0; i < data.Posts.length; i++) {
