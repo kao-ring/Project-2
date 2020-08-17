@@ -60,10 +60,10 @@ The Village app allows people from a specific area (zipcode) to check local acti
 For any questions about this app or if you'd like to contribute, please refer to our Github page, or contact us by email!
 [The Village App GitHub Link](https://github.com/kao-ring/Project-2.git)
 
-| Team Member     | E-mail                            |
-| --------------- | --------------------------------- |
-| Devon Brewster  | [devonbrewster31@gmail.com][pldb] |
-| Kaori Caplan    | [kao.ring@yahoo.com][plgh]        |
-| Melissa Mercado | [melissa.a.merc@gmail.com][plgd]  |
-| Jessica Perez   | [1jessicaperez@gmail.com][plod]   |
-| Joshua Wilensky | [joshwilensky@gmail.com][plme]    |
+| Team Member     | E-mail                    |
+| --------------- | ------------------------- |
+| Devon Brewster  | devonbrewster31@gmail.com |
+| Kaori Caplan    | kao.ring@yahoo.com        |
+| Melissa Mercado | melissa.a.merc@gmail.com  |
+| Jessica Perez   | 1jessicaperez@gmail.com   |
+| Joshua Wilensky | joshwilensky@gmail.com    |
