@@ -4,11 +4,6 @@ $(document).ready(function () {
   $.get("/api/user_data").then(function (data) {
     $(".member-name").text(data.email);
   });
-  //on search button click get the value
-
-  // $("#fun-search").change(function () {
-  //   console.log("hi");
-  // });
 
   $("#funpostlist").on("change", function () {
     let id = this.value;
@@ -30,34 +25,14 @@ $(document).ready(function () {
     let user = $(this).attr("name");
     $.get(`/api/users/${user}`).then(function (data) {
       for (var i = 0; i < data.Posts.length; i++) {
-        $("#currentposts").append(`<h5>${data.Posts[i].title}</h5>`);
-        $("#currentposts").append(`<p>${data.Posts[i].description}</p>`);
+        $("#currentposts").append(`<li class="devouredB">
+        <div class="text-left list" style="float: left;">
+        ${data.Posts[i].id}. ${data.Posts[i].title} | ${data.Posts[i].description}
+          
+        </div>
+        <div class="text-right list"><a href=# class="edit-post" data-id="${data.Posts[i].id}">edit</a> | <a href=# class="delete-post" data-id="${data.Posts[i].id}">delete</a></div>
+      </li>`);
       }
     });
   });
-
-  //   $("#fun-search").on("click", function () {
-  //     event.preventDefault();
-  //     // grab id
-  //     console.log($(this));
-  //     var id;
-  //     $.get(`/api/posts/${id}`).then(function (data) {
-  //       // $(".member-name").text(data.email);
-  //     });
-  //     // get request with id
-
-  //   });
-  // });
-
-  //to display the latest fun stuff post to the member page
-  // $.get("/api/members").then(function (data) {
-  //   $("#fun-title").append(
-  //     `<div id="fun-title">${data.title}</div><div id="fun-description">${data.description}</div>`
-  //   );
-  // });
-  // //display the description of the clicked funStuff title
-  // $.get("/api/members").then(function (data) {
-  //   $("#fun-description").text(
-  //     `<div id="fun-description">${this.data.description}</div>`
-  //   );
 });
