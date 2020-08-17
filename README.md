@@ -1,7 +1,5 @@
 # Project-2: THE VILLAGE
 
-![villagelogo](https://user-images.githubusercontent.com/66797344/90347043-bf732080-dffb-11ea-9788-60edc4f7af45.png)
-
 ## Description
 
 The Village app allows people from a specific area (zipcode) to check local activities shared by their community.
@@ -59,11 +57,8 @@ The Village app allows people from a specific area (zipcode) to check local acti
 
 For any questions about this app or if you'd like to contribute, please refer to our Github page, or contact us by email!
 [The Village App GitHub Link](https://github.com/kao-ring/Project-2.git)
-
-| Team Member     | E-mail                    |
-| --------------- | ------------------------- |
-| Devon Brewster  | devonbrewster31@gmail.com |
-| Kaori Caplan    | kao.ring@yahoo.com        |
-| Melissa Mercado | melissa.a.merc@gmail.com  |
-| Jessica Perez   | 1jessicaperez@gmail.com   |
-| Joshua Wilensky | joshwilensky@gmail.com    |
+**Devon Brewster** -- devonbrewster31@gmail.com
+**Kaori Caplan** -- kao.ring@yahoo.com
+**Melissa Mercado** -- melissa.a.merc@gmail.com
+**Jessica Perez** -- 1jessicaperez@gmail.com
+**Joshua Wilensky** -- joshwilensky@gmail.com
