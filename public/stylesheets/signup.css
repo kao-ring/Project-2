@@ -21,12 +21,16 @@ textarea {
   color: #000 !important;
   font-weight: 300;
 }
-
+header {
+  margin-bottom: 30px;
+}
 .navbar {
   color: white;
   background-color: #075f64;
 }
-
+img {
+  max-width: 130px;
+}
 .fixed-bottom {
   opacity: 0.5;
 }
@@ -77,8 +81,10 @@ button:focus {
   position: absolute;
 }
 .card {
-  min-width: 200px;
-  max-width: 400px;
+  padding-left: 10px;
+  padding-right: 10px;
+  min-width: 300px;
+  max-width: 500px;
 }
 .form-group {
   position: relative;
