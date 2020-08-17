@@ -57,8 +57,9 @@ The Village app allows people from a specific area (zipcode) to check local acti
 
 For any questions about this app or if you'd like to contribute, please refer to our Github page, or contact us by email!
 [The Village App GitHub Link](https://github.com/kao-ring/Project-2.git)
-**Devon Brewster** -- devonbrewster31@gmail.com
-**Kaori Caplan** -- kao.ring@yahoo.com
-**Melissa Mercado** -- melissa.a.merc@gmail.com
-**Jessica Perez** -- 1jessicaperez@gmail.com
-**Joshua Wilensky** -- joshwilensky@gmail.com
+
+- [x]**Devon Brewster** -- devonbrewster31@gmail.com
+- [x]**Kaori Caplan** -- kao.ring@yahoo.com
+- [x]**Melissa Mercado** -- melissa.a.merc@gmail.com
+- [x]**Jessica Perez** -- 1jessicaperez@gmail.com
+- [x]**Joshua Wilensky** -- joshwilensky@gmail.com
