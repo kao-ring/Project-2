@@ -13,7 +13,7 @@
         </li>
         <li class="nav-item">
           <!-- signout page not made yet-->
-          <a class="nav-link" href="/signout">Sign Out</a>
+          <a class="nav-link" href="/logout">Sign Out</a>
         </li>
       </ul>
     </div>
@@ -31,7 +31,7 @@
         <option value="{{this.dataValues.id}}">{{ dataValues.title }}</option>
         {{/each}}
       </select>
-      <a href="/submit">Submit Something Fun</a>
+      <a href="/submit?fun=true">Submit Something Fun</a>
     </div>
     <div class="card-body" id="funstuff">
       <div id="latest">
@@ -54,7 +54,7 @@
         <option value="{{this.dataValues.id}}">{{ dataValues.title }}</option>
         {{/each}}
       </select>
-      <a href="/submit">Submit Something Serious</a>
+      <a href="/submit?fun=false">Submit Something Serious</a>
     </div>
     <div class="card-body" id="seriousstuff">
       <div id="serious-title"></div>

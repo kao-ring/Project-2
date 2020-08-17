@@ -1,47 +1,69 @@
-# Project-2: The VILLAGE
+# Project-2: THE VILLAGE
+
+![villagelogo](https://user-images.githubusercontent.com/66797344/90347043-bf732080-dffb-11ea-9788-60edc4f7af45.png)
 
 ## Description
 
-THE VILLAGE app allows people from a specific area(zipcode) to check local activities shared by thir community.
+The Village app allows people from a specific area (zipcode) to check local activities shared by their community.
+
+---
 
 ## Table of Contents
 
 1. [Installation](#Installation)
 2. [Usage](#Usage)
-3. [Github repository and Deployed Heroku](#Github-repository-Deployed-Heroku)
+3. [GitHub repository and Deployed Heroku](#GitHub_Repository/Deployed_Heroku)
 4. [Contributors and Questions](#Contributors-Questions)
+
+---
 
 ## Installation
 
-- Make sure to `npm install`, from the `package.json` file in terminal in order to get the app running with all dependencies needed.
-- Also make sure to run the schema in your Mysql Workbench to get the database running.
-- Open your browser to `localhost:8080` to get access to the homepage of the Village.
+- Make sure to `npm install` from the `package.json` file in the terminal in order to get the app running with all the dependencies needed.
+- Also make sure to run the schema in your MySQL Workbench to get the database running.
+- Open your browser to `localhost:8080` to get access to the homepage of The Village.
+
+---
 
 ## Usage
 
-- The user is presented with a homepage where they have the option to click on login OR signup. They are then sent to the page to login OR signup.
-- After they enter their information properly, the user is sent to the member page where they have access to the activies going on in their area.
-- They are given the option to add an activity (FUN or SERIOUS) that will populate our database.
-- They can also pick from a dropdown list that will present all existing activities pulled from our database. If they click an activity, the full description will appear in the dedicated section below.
-- Finally, they are able to view a history of the activities they posted on the bottom of the member page.
+- The user is presented with a homepage where they have the option to click on log-in OR sign-up. They are then sent to the page to log-in OR sign-up.
+- After they enter their information properly, the user is sent to the member's page where they have access to the activies going on in their area.
+- They are given the option to add an activity of "FUN" or "SERIOUS" which will populate our database.
+- They can also pick from a dropdown list that will present all existing activities pulled from our database. If they click on an activity, the full description will appear in the dedicated section below.
+- Finally, they are able to view a history of the activities they posted on the bottom of the member's page.
 - When they are done, they can LOGOUT.
 
-### Github-repository-Deployed-Heroku
+---
 
-- Github repository:
-  [Github repository](https://github.com/kao-ring/Project-2.git)
+### GitHub-repository-Deployed-Heroku
+
+- GitHub Repository:
+  [GitHub Repository](https://github.com/kao-ring/Project-2.git)
 - Heroku Deployed:
-  [Deployed link](https://limitless-refuge-18664.herokuapp.com/)
+  [Deployed Link](https://limitless-refuge-18664.herokuapp.com/)
 
-### #Contributors-Questions
+---
 
-- Contributors:
-  [Devon Brewster]()
-  [Kaori Caplan]()
-  [Melissa Mercado]()
-  [Jessica Perez]()
-  [Joshua Wilensky]()
+### Contributors-Questions
 
-- For any questions about this app or if you'd like to contribute, please refer to our Github page or contact us by email!
-  [The Village app Github link:](https://github.com/JessicaPerez1)
-  devonbrewster31@gmail.com, kao.ring@yahoo.com, melissa.a.merc@gmail.com, 1jessicaperez@gmail.com,
+- Contributors and Github links:
+
+  - [Devon Brewster](http://github.com/D-Brewst)
+  - [Kaori Caplan](https://github.com/kao-ring)
+  - [Melissa Mercado](https://github.com/mmerc00)
+  - [Jessica Perez](https://github.com/JessicaPerez1)
+  - [Joshua Wilensky](https://github.com/joshwilensky)
+
+---
+
+For any questions about this app or if you'd like to contribute, please refer to our Github page, or contact us by email!
+[The Village App GitHub Link](https://github.com/kao-ring/Project-2.git)
+
+| Team Member     | E-mail                    |
+| --------------- | ------------------------- |
+| Devon Brewster  | devonbrewster31@gmail.com |
+| Kaori Caplan    | kao.ring@yahoo.com        |
+| Melissa Mercado | melissa.a.merc@gmail.com  |
+| Jessica Perez   | 1jessicaperez@gmail.com   |
+| Joshua Wilensky | joshwilensky@gmail.com    |

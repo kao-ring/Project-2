@@ -1,7 +1,6 @@
 $(document).ready(function () {
 
-  // change var to let
-
+  // CHANGED VAR to LET
   // Getting references to our form and inputs
   var loginForm = $("form.login");
   var emailInput = $("#email-input");
@@ -31,9 +30,9 @@ $(document).ready(function () {
   function loginUser(userData) {
     $.post("/api/login", {
 
-      email: userData.email,
-      password: userData.password,
-    })
+        email: userData.email,
+        password: userData.password,
+      })
       .then(function (user) {
         // console.log(user);
 
