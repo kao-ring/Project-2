@@ -10,6 +10,10 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false,
     },
   });
-
+  Zipcode.associate = function (models) {
+    Zipcode.hasMany(models.User);
+    Zipcode.hasOne(models.Board);
+    Zipcode.hasMany(models.Post);
+  };
   return Zipcode;
 };

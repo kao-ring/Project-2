@@ -43,6 +43,11 @@ module.exports = function (sequelize, DataTypes) {
         allowNull: false,
       },
     });
+    Post.belongsTo(models.Zipcode, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
   };
 
   return Post;

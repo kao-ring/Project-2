@@ -45,5 +45,5 @@ h3 {
 }
  */
 .btn {
-  margin: 2em;
+  margin: 2em .5em .5em 2em;
 }
