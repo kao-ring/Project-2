@@ -1,7 +1,7 @@
 console.log(location.search);
-
 var updating = false;
 
+//check URL after ?, then make radio check bottun or get id for edit function
 if (location.search.split("=")[1] === "true") {
   $("#fun").attr("checked", "checked");
 } else if (location.search.split("=")[1] === "false") {
@@ -11,6 +11,7 @@ if (location.search.split("=")[1] === "true") {
   getPostData(postId);
 }
 
+//sending get request with id on URL after?mark then put back all information to post form
 function getPostData(id) {
   $.get("/api/posts/" + id, function (data) {
     if (data) {
@@ -47,16 +48,14 @@ $(document).ready(function () {
       isFun: isFun,
       description: description.val(),
     };
-
+    //checking this form is a new post or editing post
     if (updating) {
-      console.log("updateだよー。");
       newPost.id = postId;
       updatePost(newPost);
     } else {
-      console.log("ニューポストだよー。");
       submitPost(newPost);
     }
-
+    //post as a new post
     function submitPost() {
       $.post("/api/posts", {
         title: newPost.title,
@@ -68,7 +67,7 @@ $(document).ready(function () {
         window.location.replace("/members");
       });
     }
-
+    // sending form as an edited data
     function updatePost(post) {
       $.ajax({
         method: "PUT",
