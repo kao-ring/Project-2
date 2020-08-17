@@ -1,13 +1,11 @@
 body {
   color: #000;
   overflow-x: hidden;
-  background:
-    url(https://images.pexels.com/photos/280221/pexels-photo-280221.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  background: url(https://images.pexels.com/photos/280221/pexels-photo-280221.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
   background-repeat: no-repeat;
   background-size: cover;
   float: center;
   padding-top: 3.5%;
-
 }
 
 input,
@@ -25,7 +23,8 @@ textarea {
 }
 
 .navbar {
-  opacity: 0.5;
+  color: white;
+  background-color: #075f64;
 }
 
 .fixed-bottom {
@@ -56,7 +55,6 @@ button:focus {
   margin: auto;
   width: 40%;
   white-space: no-wrap;
-
 }
 
 .card1 {
@@ -78,7 +76,10 @@ button:focus {
 #logo {
   position: absolute;
 }
-
+.card {
+  min-width: 200px;
+  max-width: 400px;
+}
 .form-group {
   position: relative;
   margin-bottom: 1.5rem;
@@ -92,8 +93,8 @@ button:focus {
   opacity: 0.5;
 }
 
-.form-control:focus+.form-control-placeholder,
-.form-control:valid+.form-control-placeholder {
+.form-control:focus + .form-control-placeholder,
+.form-control:valid + .form-control-placeholder {
   font-size: 80%;
   transform: translate3d(0, -100%, 0);
   opacity: 1;
@@ -137,7 +138,6 @@ a:hover {
 @media screen and (max-width: 1200px) {
   .card1 {
     width: 100%;
-
   }
 
   .bottom {
