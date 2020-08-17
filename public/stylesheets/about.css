@@ -1,0 +1,19 @@
+.jumbotron {
+  height: 100vh;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  background-color: white;
+}
+img {
+  max-width: 130px;
+}
+.navbar {
+  background-color: #075f64;
+}
+.btn {
+  background-color: #075f64;
+}
+
+h1 {
+  color: #075f64;
+}

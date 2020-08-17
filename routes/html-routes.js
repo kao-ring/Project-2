@@ -46,14 +46,14 @@ module.exports = function (app) {
         where: {
           //changes to BOOLEAN to match new MODEL
           isFun: true,
-          ZipcodeId: zipCode
+          ZipcodeId: zipCode,
         },
       }),
       seriousPosts: await db.Post.findAll({
         where: {
           //UPDATED
           isFun: false,
-          ZipcodeId: zipCode
+          ZipcodeId: zipCode,
         },
       }),
       styles: "memberspage.css",
@@ -68,6 +68,11 @@ module.exports = function (app) {
     });
   });
 
+  app.get("/about", function (req, res) {
+    res.render("about", {
+      styles: "about.css",
+    });
+  });
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/members", isAuthenticated, function (req, res) {
