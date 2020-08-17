@@ -35,6 +35,7 @@ $(document).ready(function () {
       </li>`);
       }
       deletePost();
+      editPost();
     });
   });
 
@@ -57,15 +58,8 @@ $(document).ready(function () {
   function editPost() {
     $(".edit-post").on("click", function (event) {
       var id = $(this).data("id");
-      // $.get(`/api/posts/${id}`).then(function (data) {
-      //   $("#fun-title").text(data.title);
-      //   $("#fun-description").text(data.description);
-      // });
-      window.location.href = "/submit";
-      $.get(`/api/posts/${id}`).then(function (data) {
-        $("#title").text(data.title);
-        $("#description").text(data.description);
-      });
+
+      window.location.href = "/submit?post_id=" + id;
     });
   }
 });
