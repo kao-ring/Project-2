@@ -35,6 +35,7 @@ $(document).ready(function () {
       </li>`);
       }
       deletePost();
+      editPost();
     });
   });
 
@@ -54,5 +55,11 @@ $(document).ready(function () {
     });
   }
 
-  function editPost() {}
+  function editPost() {
+    $(".edit-post").on("click", function (event) {
+      var id = $(this).data("id");
+
+      window.location.href = "/submit?post_id=" + id;
+    });
+  }
 });
