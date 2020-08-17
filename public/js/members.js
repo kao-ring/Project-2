@@ -33,6 +33,25 @@ $(document).ready(function () {
         <div class="text-right list"><a href=# class="edit-post" data-id="${data.Posts[i].id}">edit</a> | <a href=# class="delete-post" data-id="${data.Posts[i].id}">delete</a></div>
       </li>`);
       }
+      deletePost();
     });
   });
+
+  function deletePost() {
+    $(".delete-post").on("click", function (event) {
+      var id = $(this).data("id");
+      console.log("clicked id:" + id);
+
+      // Send the DELETE request.
+      $.ajax("/api/posts/" + id, {
+        type: "DELETE",
+      }).then(function () {
+        console.log("deleted posts", id);
+        // Reload the page to get the updated list
+        location.reload();
+      });
+    });
+  }
+
+  function editPost() {}
 });
