@@ -46,14 +46,14 @@ module.exports = function (app) {
         where: {
           //changes to BOOLEAN to match new MODEL
           isFun: true,
-          ZipcodeId: zipCode
+          ZipcodeId: zipCode,
         },
       }),
       seriousPosts: await db.Post.findAll({
         where: {
           //UPDATED
           isFun: false,
-          ZipcodeId: zipCode
+          ZipcodeId: zipCode,
         },
       }),
       styles: "memberspage.css",
