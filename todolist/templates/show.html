@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<h1>Let's see some more information about -- {{task.category}} {{task.tasks}}!</h1>
+<a href="{{url_for('edit', id=task.id)}}">Edit Task</a>
+
+<h2>Delete Task</h2>
+<form method="POST" action="{{url_for('delete', id=task.id)}}">
+    <input type="submit" value="Delete Task" class="btn btn-danger">
+</form>
+{% endblock %}

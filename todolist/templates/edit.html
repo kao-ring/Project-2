@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<h1>Edit Task</h1>
+<form method="POST" action="{{url_for('show', id=task.id)}}">
+    <input type="text" name="category" value="{{task.category}}">
+    <input type="text" name="tasks" value="{{task.tasks}}">
+    <input type="submit" value="Edit Task">
+</form>
+
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<h1>Dashboard</h1>
+<h3>Welcome {{session.username}}</h3>
+<button class="btn btn-primary"><a href="{{ url_for('new')}}">Add Task</a></button>
+{% for task in todos %}
+
+<div class="form-check">
+<a href="{{ url_for('show', id=task.id)}}">
+  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">{{task.category}}{{task.tasks}}
+</div>
+{% endfor %}
+
+{% endblock %}
